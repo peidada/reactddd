@@ -2,13 +2,36 @@ import React from 'react';
 import { connect } from 'dva';
 import Header from '../components/Header';
 import Ppsider from '../components/Ppsider';
-import { Layout, Card } from 'antd';
+import { Layout, Card, Table } from 'antd';
 import classnames from 'classnames';
 import styles from './Product.css';
 
 const { Content } = Layout;
 
-function Product() {
+function Product({location, dispatch, product}) {
+
+  const { list } = product;
+
+  console.log(list)
+
+  const columns = [{
+      title: 'id',
+      dataIndex: 'id',
+      key: 'id',
+    }, {
+      title: 'name',
+      dataIndex: 'name',
+      key: 'name',
+    }, {
+      title: 'website',
+      dataIndex: 'website',
+      key: 'website',
+    },
+  ];
+
+
+
+
   return (
     <div className={styles.normal}>
       <Layout>
@@ -17,7 +40,7 @@ function Product() {
       		<Ppsider />
       		<Layout style={{ padding: '24px' }}>
         		<Content style={{ background: '#fff', minHeight: 280 }}>
-        		  product list
+        		  <Table columns={columns} dataSource={[list]} />
         		</Content>
       		</Layout>
       	</Layout>
@@ -30,4 +53,4 @@ function mapStateToProps() {
   return {};
 }
 
-export default connect(mapStateToProps)(Product);
+export default connect(({product}) => ({product}))(Product);
