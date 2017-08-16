@@ -1,0 +1,61 @@
+.content{
+	background: '#ECECEC';
+	 padding: 24;
+	  margin: 0;
+}
+.iconview{
+	width: 8px;
+	height: 18px;
+	background:#666699;
+	float: left;
+	margin-top: 15px;
+}
+
+.title{
+	float: left;
+	margin-left: 12px;
+	font-size: 16px;
+}
+.icondown{
+	width: 8px;
+	height: 18px;
+	background-color:rgba(61, 147, 100, 1);
+	float: left;
+	margin-top: 15px;
+}
+.icondboard{
+	width: 8px;
+	height: 18px;
+	background-color:rgba(86, 203, 255, 1);
+	float: left;
+	margin-top: 15px;
+}
+.iconload{
+	width: 8px;
+	height: 18px;
+	background-color:#0e77ca;
+	float: left;
+	margin-top: 15px;
+}
+
+.iconarchive{
+	width: 8px;
+	height: 18px;
+	background:rgba(86, 203, 255, 1);
+	float: left;
+	margin-top: 6px;
+}
+
+.archiveButton{
+	margin-left: 12px;
+	font-size: 26px;
+	margin-top: 3px;
+	color: rgba(86, 203, 255, 1);
+}
+.iconReleased{
+	width:'10px';
+	height:'10px';
+	borderRadius:'50%';
+	 backgroundColor: '#2C9B34';
+}
+

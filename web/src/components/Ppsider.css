@@ -1,0 +1,22 @@
+.main{
+	width: 180px;
+	float: left;
+}
+.menu{
+	background: #374562;
+}
+.one{
+	border-bottom: 1px solid #333;
+	padding-left: 10px;
+}
+.draftnum{
+	display: inline-block;
+	width: 24px;
+	height: 18px;
+	border-radius: 40%;
+	background: #666699;
+	line-height: 18px;
+	text-align: center;
+	margin-left: 10px;
+	color: #fff;
+}
