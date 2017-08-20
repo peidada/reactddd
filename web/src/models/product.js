@@ -19,13 +19,13 @@ export default {
   		const { data } = yield call( mock );
       	console.log(data)
   		yield put({
-  			type: 'save',
+  			type: 'productlist',
   			payload: { data },
   		});
   	},
   },
   reducers: {
-    save(state, {payload:{data:list}}){
+    productlist(state, {payload:{data:list}}){
       return {...state, list};
     },
   },

@@ -10,7 +10,7 @@ function Messages (){
 				        	<br />
 				        	 <TextArea rows={3} />
 				        	 <br /><br />
-				        	 <Icon type="check-circle-o" style={{float:'right',fontSize: 36, color: 'rgba(86, 203, 255, 1)',cursor: 'pointer'}}/>
+				        	 <Icon type="check-circle-o" style={{float:'right',fontSize: 30, color: 'rgba(86, 203, 255, 1)',cursor: 'pointer'}}/>
 				       	 </div>
   );
   

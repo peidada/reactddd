@@ -1,3 +1,31 @@
 
 .normal {
 }
+.topbox{
+	width: 100%;
+	min-height: 100px;
+	border-bottom: 1px solid #F2F2F2;
+}
+.leftbox{
+	float: left;
+	margin-left: 35px;
+	margin-top: 30px;
+}
+.topboxtwo{
+	font-size: 20px;
+}
+.download{
+	width: 98px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: none;
+	float: right;
+	background: #666699;
+	margin-top: 40px;
+	margin-right: 30px;
+}
+.down{
+	width: 20px;height: 20px;
+	background: url(../assets/tasknum.png) no-repeat center 0;
+}

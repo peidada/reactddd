@@ -17,7 +17,7 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://jsonplaceholder.typicode.com/",
+      "target": "http://10.176.1.118:8081/",
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
       }

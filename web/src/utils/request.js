@@ -22,14 +22,15 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 
-export function request(url, options) {
+export default function request(url, options) {
+
+  url = "/api"+url;
+
   return fetch(url, options)
     .then(checkStatus)
     .then(parseJSON)
-    .then(data => {
-       console.log(data)
-     })
-    .catch(err => ({ err }));
+    .then((data) => ({ data }))
+    .catch((err) => ({ err }));
 }
 
 

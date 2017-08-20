@@ -78,6 +78,6 @@ const SbbMain = (data) => {
 }
 
 
-export default connect(({ data }) => ({
-  data,
+export default connect(({ sbbMain }) => ({
+  sbbMain,
 }))(SbbMain);

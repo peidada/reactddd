@@ -11,28 +11,40 @@ const { Content } = Layout;
 
 const CheckboxGroup = Checkbox.Group;
 
-function onChange(checkedValues) {
-  console.log('checked = ', checkedValues);
-}
+function Search({location, dispatch, search}) {
 
-const optionsCycle = [
-  	{ label: 'FY2016', value: 'FY2016' },
-  	{ label: 'FY2017', value: 'FY2017' },
-  	{ label: 'FY2018', value: 'FY2018' },
-];
+  const { draftnum, baselinelist } = search;
 
-const optionsSegmentation = [
-	{ label: 'Desktop', value: 'Desktop' },
-  	{ label: 'Notebook', value: 'Notebook' },
-];
+  const draftnumProps = { draftnum, baselinelist };
 
-const optionsSegment = [
-	{ label: 'Consumer', value: 'Consumer' },
-  	{ label: 'commercial', value: 'commercial' },
-];
+  const arr = [];
+
+  const value = { label:'', value:'' };
+
+  baselinelist.data.map((baseline) => arr.push(value.value = value.label = baseline.baselineName.slice(0,8)));
+
+  const newArr = [...new Set(arr)];
+
+  function onChange(checkedValues) {
+    console.log('checked = ', checkedValues);
+    console.log(checkedValues[1]);
+    checkedValues.map((checkedValues) => console.log(checkedValues))
+  }
+
+  const optionsCycle = newArr;
+
+  const optionsSegmentation = [
+    { label: 'Desktop', value: 'Desktop' },
+    { label: 'Notebook', value: 'Notebook' },
+  ];
+  
+  const optionsSegment = [
+    { label: 'Consumer', value: 'Consumer' },
+    { label: 'commercial', value: 'commercial' },
+  ];
 
 
-function Search({dispatch, list:dataSource}) {
+
 
 	const searchClick = () => {
 		dispatch(routerRedux.push({
@@ -45,7 +57,7 @@ function Search({dispatch, list:dataSource}) {
       <Layout>
       	<Header />
       	<Layout className={classnames('ant-layout-has-sider')}>
-      		<Ppsider />
+      		<Ppsider {...draftnumProps}/>
       		<Layout style={{ padding: '24px' }}>
         		<Content style={{ background: '#fff', minHeight: 280 }}>
         		  <div className={styles.topbox}>
@@ -75,8 +87,5 @@ function Search({dispatch, list:dataSource}) {
   );
 }
 
-function mapStateToProps() {
-  return {};
-}
 
-export default connect(mapStateToProps)(Search);
+export default connect(({search}) => ({search}))(Search);

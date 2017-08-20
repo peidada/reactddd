@@ -15,7 +15,7 @@ function Header () {
       		theme="dark"
     	>
       		<Menu.Item key="/portfolio" className={styles.portfolio}>
-      		  <Link to="/portfolio">Product Portfolio</Link>
+      		  <Link to="/portfolio/search">Product Portfolio</Link>
       		</Menu.Item>
       		<Menu.Item key="/sbb" className={styles.part}>
       		  <Link to="/sbb">Key Part Plan</Link>

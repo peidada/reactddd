@@ -9,7 +9,7 @@ const windowHeight = document.documentElement.clientHeight;
 
 const menuHeight = windowHeight-62;
 
-function Ppsider() {
+function Ppsider({draftnum, baselinelist}) {
   return (
     <div className={styles.main}>
       	<Menu
@@ -22,7 +22,7 @@ function Ppsider() {
       		  <Link to="/portfolio/search">SEARCH</Link>
       		</Menu.Item>
       		<Menu.Item key="/draft" className={styles.draft}>
-      		  <Link to="/draft">DRAFT BOX<span className={styles.draftnum}>12</span></Link>
+      		  <Link to="/draft">DRAFT BOX<span className={styles.draftnum}>{draftnum.data}</span></Link>
       		</Menu.Item>
 
       		<div className={styles.one}>Baselines</div>
@@ -30,13 +30,9 @@ function Ppsider() {
       		<Menu.Item key="/create" className={styles.create}>
       		  <Link to="/create">+ Create Baseline</Link>
       		</Menu.Item>
-            <Menu.Item key="setting:1">FY 16/17 NB</Menu.Item>
-            <Menu.Item key="setting:2">FY 16/17 DT</Menu.Item>
-            <Menu.Item key="setting:3">FY 15/16 NB</Menu.Item>
-            <Menu.Item key="setting:4">FY 15/16 DT</Menu.Item>
-
-            <div className={styles.one}>Master Data</div>
-            <Menu.Item key="setting:5">MATRIX</Menu.Item>
+          { baselinelist.data.map((baseline,id) => <Menu.Item key={id}>{baseline.baselineName}</Menu.Item>) }
+          <div className={styles.one}>Master Data</div>
+          <Menu.Item key="setting:5">MATRIX</Menu.Item>
     	</Menu>
     </div>
   );

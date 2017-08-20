@@ -3,7 +3,7 @@ import * as sbbService from '../services/users';
 import dva from 'dva';
 
 export default({
-	namespace:'sbb',
+	namespace:'sbbMain',
 	state : {
 		data:{},
 	},
@@ -11,10 +11,11 @@ export default({
 		setup ({dispath,history}) {
 			 history.listen(() => {
 				//const match = pathToRegexp('/sbb/:id').exec(localtion.pathname)
-			//	if(math){
+				//if(math){
 					dispatch({
 						type:'query',
-						 payload: { id: match[1] }
+						// payload: { id: match[1] }
+						payload: {}
 					 })
 		// }
       })
