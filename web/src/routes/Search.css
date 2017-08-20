@@ -30,6 +30,17 @@
 	font-size: 13px;
 	color: #333;
 }
+.radiogroup{
+	margin-left: 108px;
+}
+.radiogroup1{
+	margin-left: 132px;
+}
+.radiogroup label, .radiogroup1 label{
+	margin-left: 70px;
+	font-size: 13px;
+	color: #333;
+}
 .search{
 	width: 146px;
 	height: 32px;

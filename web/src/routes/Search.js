@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import Header from '../components/Header';
 import Ppsider from '../components/Ppsider';
-import { Layout, Card, Checkbox, Button } from 'antd';
+import { Layout, Card, Checkbox, Button, Radio } from 'antd';
 import classnames from 'classnames';
 import { routerRedux } from 'dva/router';
 import styles from './Search.css';
@@ -10,6 +10,8 @@ import styles from './Search.css';
 const { Content } = Layout;
 
 const CheckboxGroup = Checkbox.Group;
+
+const RadioGroup = Radio.Group;
 
 function Search({location, dispatch, search}) {
 
@@ -34,8 +36,8 @@ function Search({location, dispatch, search}) {
   const optionsCycle = newArr;
 
   const optionsSegmentation = [
-    { label: 'Desktop', value: 'Desktop' },
-    { label: 'Notebook', value: 'Notebook' },
+    { label: 'Desktop', value: 'DT' },
+    { label: 'Notebook', value: 'NB' },
   ];
   
   const optionsSegment = [
@@ -43,8 +45,14 @@ function Search({location, dispatch, search}) {
     { label: 'commercial', value: 'commercial' },
   ];
 
+  const state = {
+     value2: 'Desktop',
+     value3: 'Consumer',
+  }
 
-
+  const onChange2 = (e) => {
+    console.log('radio2 checked', e.target.value);
+  }
 
 	const searchClick = () => {
 		dispatch(routerRedux.push({
@@ -71,11 +79,11 @@ function Search({location, dispatch, search}) {
     				</p>
     				<p style={{ height: '50px', paddingTop: '10px', marginLeft: '40px' }}>
     					<span className={styles.checkboxname}>Product Segmentation:</span>
-    					<CheckboxGroup className={styles.checkboxgroup} options={optionsSegmentation} defaultValue={['']} onChange={onChange} />
+    					<RadioGroup className={styles.radiogroup} options={optionsSegmentation} onChange={onChange2} defaultValue={state} />
     				</p>
     				<p style={{ height: '50px', paddingTop: '10px', marginLeft: '40px' }}>
     					<span className={styles.checkboxname}>Business Segment:</span>
-    					<CheckboxGroup className={styles.checkboxgroup} options={optionsSegment} defaultValue={['']} onChange={onChange} />
+    					<RadioGroup className={styles.radiogroup1} options={optionsSegment} onChange={onChange2} defaultValue={state} />
     				</p>
   				  </Card>
   				  <Button type="primary" className={styles.search} onClick={searchClick}>Search</Button>
